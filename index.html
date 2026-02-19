@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/300344f6cb.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <h1>Job Tracker</h1>
+
+      <!-- <button id="delete-all-btn">Delete All</button> -->
+    </nav>
+    <div class="container">
+      <div class="form">
+        <h4>Track new job</h4>
+        <br />
+        <label for="title">Job Title:</label>
+        <input
+          type="text"
+          placeholder="Enter Job Title"
+          id="title"
+          class="input-group"
+        />
+        <label for="company">Company:</label>
+        <input
+          type="text"
+          placeholder="Enter Company Name"
+          id="company"
+          class="input-group"
+        />
+        <label for="location">Location:</label>
+        <input
+          type="text"
+          placeholder="Enter Location"
+          id="location"
+          class="input-group"
+        />
+
+        <label for="stat" id="stat">Status:</label>
+        <select id="status" name="status" class="input-group">
+          <option value="">Select one</option>
+          <option value="Applied">Applied</option>
+          <!-- <option value="Contacted">Contacted</option> -->
+          <option value="Assessment">Assessment</option>
+          <option value="Interview">Initial Interview</option>
+          <option value="Final_interview">Final Interview</option>
+          <option value="Offer">Offer</option>
+          <option value="Rejected">Rejected</option>
+        </select>
+        <!-- <input type="submit" value="Submit" /> -->
+        <button id="btn" type="submit">Submit</button>
+        <!-- <button id="test" type="submit">Test Data</button> -->
+      </div>
+      <div class="right"></div>
+      <!-- <div class="noData">
+        <div class="noDataMsg">
+          <img src="assets/nothingHere.webp" alt="No jobs added yet" id="img" />
+          <h2>No Jobs Added Yet</h2>
+          <p>Use the form on the left to add your job applications.</p>
+        </div>
+      </div> -->
+      <div class="job-container">
+        <h1>My Applications</h1>
+        <br />
+
+        <div class="QScontainer">
+          <div class="parent">
+            <div class="div1">
+              <h4>Total</h4>
+              <br />
+              <span id="application-count">0</span>
+            </div>
+            <div class="div1">
+              <h4>Applied</h4>
+              <br />
+              <span id="applied-count">0</span>
+            </div>
+            <div class="div1">
+              <h4>Interview</h4>
+              <br />
+              <span id="initial-interview-count">0</span>
+            </div>
+            <div class="div1">
+              <h4>Offer</h4>
+              <br />
+              <span id="offer-count">0</span>
+            </div>
+            <div class="div1">
+              <h4>Rejected</h4>
+              <br />
+              <span id="rejected-count">0</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="quickStat">
+          <!-- <h4>Applications: <span id="application-count">0</span></h4>
+          <h4>
+            Initial Interview: <span id="initial-interview-count">0</span>
+          </h4>
+          <h4>Offer: <span id="offer-count">0</span></h4> -->
+        </div>
+        <div class="sortControl">
+          <label for="sort">Sort by:</label>
+          <select id="sort" name="sort" onchange="sortJobs(this.value)">
+            <option value="">Select one</option>
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+            <option value="company">Company A-Z</option>
+            <option value="status">Status</option>
+          </select>
+        </div>
+
+        <div class="output"></div>
+      </div>
+    </div>
+
+    <!-- <div class="job-card">
+      <button class="menu-btn">⋮</button>
+
+      <div class="menu">
+        <button class="edit">Edit</button>
+        <button class="delete">Delete</button>
+      </div>
+    </div>
+    <div class="job-card-test"></div> -->
+  </body>
+  <script src="script.js"></script>
+</html>
