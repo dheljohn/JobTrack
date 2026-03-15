@@ -171,7 +171,7 @@ span {
   background: #f9f9f9;
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
   width: 50%;
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 70px);
   height: auto;
   align-items: center;
   justify-content: center;
