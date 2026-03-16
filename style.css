@@ -137,7 +137,7 @@ span {
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(1, 1fr);
   gap: 7px;
-  width: 100%;
+  width: 100dvw;
 }
 .div1 {
   background-color: #f9f9f9;
@@ -150,6 +150,21 @@ span {
   position: relative;
   text-align: center;
   border: 1px solid #ccc;
+}
+.div1:nth-child(1) {
+  border-top: 3px solid #6366f1;
+}
+.div1:nth-child(2) {
+  border-top: 3px solid #3b82f6;
+}
+.div1:nth-child(3) {
+  border-top: 3px solid #f59e0b;
+}
+.div1:nth-child(4) {
+  border-top: 3px solid #10b981;
+}
+.div1:nth-child(5) {
+  border-top: 3px solid #ef4444;
 }
 
 .job-card {
@@ -181,18 +196,7 @@ span {
 .job-container h4 {
   font-weight: normal;
 }
-/* .noData {
-  width: 50%;
-  height: calc(100vh - 100px);
-  background-color: #f9f9f9;
-  display: block;
-  position: fixed;
-  z-index: 10;
-  right: 0;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-} */
+
 .noDataMsg {
   position: absolute;
   /* top: 50%;
@@ -276,7 +280,7 @@ span {
     width: 90%;
   }
   .job-container {
-    width: 100%;
+    width: 100dvw;
     min-height: calc(50vh - 100px);
     height: auto;
     margin-top: 20px;
@@ -292,5 +296,99 @@ span {
     top: 0%;
     left: 0%;
     transform: translate(0%, 0%);
+  }
+
+  .QScontainer {
+    display: block;
+
+    flex-direction: row;
+  }
+
+  span {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  #offer-count {
+    color: green;
+  }
+  #rejected-count {
+    color: red;
+  }
+
+  .parent {
+    justify-content: center;
+
+    display: grid;
+    justify-content: start;
+    /* grid-template-columns: repeat(
+      auto-fit,
+      minmax(clamp(50px, 60px, 200px), 1fr)
+    ); */
+    grid-template-columns: repeat(auto-fit, minmax(min(60px, 100%), 1fr));
+
+    gap: 7px;
+    width: 100%;
+  }
+
+  .div1 {
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    margin-bottom: 12px;
+    padding: 10px 5px;
+    transition: transform 0.2s;
+    position: relative;
+    text-align: center;
+    border: 1px solid #ccc;
+  }
+}
+
+@media (max-width: 375px) {
+  .QScontainer {
+    display: block;
+    flex-direction: row;
+  }
+
+  span {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  #offer-count {
+    color: green;
+  }
+  #rejected-count {
+    color: red;
+  }
+
+  .parent {
+    justify-content: center;
+
+    display: grid;
+    justify-content: start;
+    /* grid-template-columns: repeat(
+      auto-fit,
+      minmax(clamp(50px, 60px, 200px), 1fr)
+    ); */
+    grid-template-columns: repeat(auto-fit, minmax(min(40px, 100%), 1fr));
+
+    gap: 4px;
+    width: 100%;
+  }
+
+  .div1 {
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2px;
+    margin-bottom: 16px;
+    padding: 8px 4px;
+    transition: transform 0.2s;
+    position: relative;
+    text-align: center;
+    border: 1px solid #ccc;
+  }
+  .div1 h4 {
+    font-size: clamp(8px, 2vw, 20px);
   }
 }
