@@ -7,6 +7,7 @@ const id = document.querySelector("#id");
 const btn = document.querySelector("#btn");
 const output = document.querySelector(".output");
 const save = localStorage.setItem;
+const form = document.querySelector(".form-container");
 
 function showForm() {
   const form = document.querySelector(".form");
@@ -110,8 +111,10 @@ function renderJobs() {
         <h3>${j.title}</h3>
         <p>${j.company}</p>
         <p>${j.location}</p>
-        <p id="status-holder">Status: </p> 
         
+        
+        <div id="status-holder"> 
+        <p>Status:</p>
         <div class="status-update">
           <select onchange="updateStatus(${j.id}, this.value)" >
             <option value="Applied" ${j.status === "Applied" ? "selected" : ""}>Applied</option>
@@ -123,6 +126,9 @@ function renderJobs() {
             <option value="Rejected" ${j.status === "Rejected" ? "selected" : ""}>Rejected</option>
           </select>
         </div>
+        </div> 
+        
+        
 
         <div class="menu">
         
@@ -152,6 +158,13 @@ document.addEventListener("click", (e) => {
     }
   }
 
+  // TOGGLE FORM BUTTON FUNCTIONALITY
+  if (e.target.id === "openForm" || e.target.id === "closeForm") {
+    const form = document.querySelector(".form-container");
+    form.classList.toggle("is-open");
+    document.body.classList.toggle("form-is-active");
+  }
+
   // ADD JOB BUTTON FUNCTIONALITY
   if (e.target && e.target.id == "btn") {
     let jobs = JSON.parse(localStorage.getItem("jobs")) || [];
@@ -162,6 +175,8 @@ document.addEventListener("click", (e) => {
       console.log("Failed!");
       return;
     } else {
+      form.classList.toggle("is-open");
+      document.body.classList.toggle("form-is-active");
       jobs.push({
         id: Date.now(),
         title: title.value,

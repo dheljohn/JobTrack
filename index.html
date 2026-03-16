@@ -17,45 +17,51 @@
       <!-- <button id="delete-all-btn">Delete All</button> -->
     </nav>
     <div class="container">
-      <div class="form">
-        <h4>Track new job</h4>
-        <br />
-        <label for="title">Job Title:</label>
-        <input
-          type="text"
-          placeholder="Enter Job Title"
-          id="title"
-          class="input-group"
-        />
-        <label for="company">Company:</label>
-        <input
-          type="text"
-          placeholder="Enter Company Name"
-          id="company"
-          class="input-group"
-        />
-        <label for="location">Location:</label>
-        <input
-          type="text"
-          placeholder="Enter Location"
-          id="location"
-          class="input-group"
-        />
+      <div class="form-container">
+        <div class="header">
+          <h4>Add Job Application</h4>
+          <i class="fa-solid fa-xmark bg-red" id="closeForm"></i>
+        </div>
 
-        <label for="stat" id="stat">Status:</label>
-        <select id="status" name="status" class="input-group">
-          <option value="">Select one</option>
-          <option value="Applied">Applied</option>
-          <!-- <option value="Contacted">Contacted</option> -->
-          <option value="Assessment">Assessment</option>
-          <option value="Interview">Initial Interview</option>
-          <option value="Final_interview">Final Interview</option>
-          <option value="Offer">Offer</option>
-          <option value="Rejected">Rejected</option>
-        </select>
-        <!-- <input type="submit" value="Submit" /> -->
-        <button id="btn" type="submit">Submit</button>
-        <!-- <button id="test" type="submit">Test Data</button> -->
+        <div class="form hidden" id="toggleForm">
+          <br />
+          <label for="title">Job Title:</label>
+          <input
+            type="text"
+            placeholder="Enter Job Title"
+            id="title"
+            class="input-group"
+          />
+          <label for="company">Company:</label>
+          <input
+            type="text"
+            placeholder="Enter Company Name"
+            id="company"
+            class="input-group"
+          />
+          <label for="location">Location:</label>
+          <input
+            type="text"
+            placeholder="Enter Location"
+            id="location"
+            class="input-group"
+          />
+
+          <label for="stat" id="stat">Status:</label>
+          <select id="status" name="status" class="input-group">
+            <option value="">Select one</option>
+            <option value="Applied">Applied</option>
+            <!-- <option value="Contacted">Contacted</option> -->
+            <option value="Assessment">Assessment</option>
+            <option value="Interview">Initial Interview</option>
+            <option value="Final_interview">Final Interview</option>
+            <option value="Offer">Offer</option>
+            <option value="Rejected">Rejected</option>
+          </select>
+          <!-- <input type="submit" value="Submit" /> -->
+          <button id="btn" type="submit">Submit</button>
+          <!-- <button id="test" type="submit">Test Data</button> -->
+        </div>
       </div>
       <div class="right"></div>
       <!-- <div class="noData">
@@ -66,7 +72,11 @@
         </div>
       </div> -->
       <div class="job-container">
-        <h1>My Applications</h1>
+        <div class="header">
+          <h1 class="title">My Applications</h1>
+          <i class="fa-solid fa-add" id="openForm"></i>
+        </div>
+
         <br />
 
         <div class="QScontainer">
